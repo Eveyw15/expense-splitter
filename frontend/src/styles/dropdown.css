@@ -1,0 +1,18 @@
+.app-dropdown { position: relative; min-width: 0; }
+.app-dropdown-trigger { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-width: 0; height: 44px; padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--muted); color: var(--foreground); text-align: left; font: 14px var(--font-body); cursor: pointer; }
+.app-dropdown-trigger:hover { background: var(--secondary); }
+.app-dropdown-trigger:focus-visible, .app-dropdown-option:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+.app-dropdown-value, .app-dropdown-option strong { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.app-dropdown-chevron { flex: none; color: var(--muted-foreground); transition: transform .16s ease; }
+.app-dropdown-menu { position: absolute; z-index: 60; top: calc(100% + 6px); left: 0; width: max-content; min-width: 100%; max-width: min(360px, calc(100vw - 48px)); max-height: 260px; overflow: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--card); box-shadow: 0 10px 24px #35342f1c; }
+.app-dropdown-option { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; padding: 10px 14px; color: var(--foreground); text-align: left; font: 600 13px var(--font-display); cursor: pointer; }
+.app-dropdown-option strong { font: inherit; }
+.app-dropdown-option:hover, .app-dropdown-option[aria-selected="true"] { background: var(--muted); }
+.app-dropdown-option svg { flex: none; color: var(--muted-foreground); }
+.app-dropdown-empty { padding: 10px 14px; color: var(--muted-foreground); font: 11px var(--font-mono); }
+.app-dropdown-heading { display: inline-block; max-width: 100%; }
+.app-dropdown-heading .app-dropdown-trigger { height: auto; padding: 2px 4px; border: 0; background: transparent; font: 800 30px/1 var(--font-display); letter-spacing: -.6px; }
+.app-dropdown-heading h1 { margin: 0; font: inherit; letter-spacing: inherit; }
+.app-dropdown-heading .app-dropdown-trigger:hover { background: var(--muted); }
+.app-dropdown-heading .app-dropdown-menu { min-width: 200px; }
+@media (max-width: 500px) { .app-dropdown-heading .app-dropdown-trigger { font-size: 24px; } .app-dropdown-menu { max-width: min(300px, calc(100vw - 48px)); } }

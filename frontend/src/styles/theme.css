@@ -1,0 +1,101 @@
+:root {
+  --background: #fbfbfa;
+  --foreground: #35342f;
+  --card: #ffffff;
+  --card-foreground: #35342f;
+  --primary: #6f6a62;
+  --primary-foreground: #ffffff;
+  --secondary: #efeeea;
+  --secondary-foreground: #35342f;
+  --muted: #f3f2ef;
+  --muted-foreground: #86817a;
+  --accent: #a68a7b;
+  --accent-foreground: #ffffff;
+  --border: #e8e6e0;
+  --ring: #a68a7b;
+  --radius: 0.4rem;
+
+  /* Morandi section hues — dusty, low-saturation */
+  --sage: #8fa08a;
+  --sage-soft: #dfe4d9;
+  --blue: #8b9dab;
+  --blue-soft: #dde3e7;
+  --clay: #bf9a89;
+  --clay-soft: #ece0d8;
+  --gold: #c1ab7d;
+  --gold-soft: #ece5d3;
+  --lav: #9d94a8;
+  --lav-soft: #e5e1e9;
+  --rose: #bd9ba0;
+  --rose-soft: #ece0e1;
+
+  --approved: #7c9a76;
+  --pending: #c1a25f;
+  --rejected: #bd8579;
+  --owe: #bd8579;
+  --owed: #7c9a76;
+
+  --font-display: 'Archivo', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+.dark {
+  --background: #201f1c;
+  --foreground: #e9e6df;
+  --card: #2a2925;
+  --card-foreground: #e9e6df;
+  --primary: #cfc9be;
+  --primary-foreground: #201f1c;
+  --secondary: #34322d;
+  --secondary-foreground: #e9e6df;
+  --muted: #302e29;
+  --muted-foreground: #a7a196;
+  --accent: #b89a89;
+  --accent-foreground: #201f1c;
+  --border: #3d3a34;
+  --ring: #b89a89;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-sage: var(--sage);
+  --color-blue: var(--blue);
+  --color-clay: var(--clay);
+  --color-gold: var(--gold);
+  --color-lav: var(--lav);
+  --color-rose: var(--rose);
+  --color-approved: var(--approved);
+  --color-pending: var(--pending);
+  --color-rejected: var(--rejected);
+  --color-owe: var(--owe);
+  --color-owed: var(--owed);
+  --radius: var(--radius);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+/* Soft press/highlight feedback on any clickable */
+@keyframes tap-pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+button:active,
+[role="button"]:active {
+  animation: tap-pop 0.18s ease;
+}
