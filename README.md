@@ -14,12 +14,13 @@ cd backend && ./mvnw test          # 138 tests, H2 in-memory
 cd frontend && npm ci && npm test && npm run dev
 ```
 
-The backend needs `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, `JWT_SECRET` and optionally `CORS_ORIGINS`.
+The backend needs `DATABASE_URL_UNPOOLED` (or `DATABASE_URL`), `JWT_SECRET` and optionally `CORS_ORIGINS`.
+`neon deploy` in the repo root writes the Neon variables to `.env.local` (project linked in `neon.ts` / `.neon`).
 
 ## Deploy (free tier)
 
-1. **Neon** (database): create a project, copy the connection details.
-   `DB_URL=jdbc:postgresql://<host>/<db>?sslmode=require`, plus user and password.
+1. **Neon** (database): already provisioned; copy `DATABASE_URL_UNPOOLED` from `.env.local`
+   (or the Neon console, direct connection string).
 2. **Render** (backend): New > Web Service from this repo, root directory `backend`, runtime Docker.
    Set the env vars above; `JWT_SECRET` must be at least 32 random characters.
    `CORS_ORIGINS` is the Vercel URL. Free instances sleep after 15 minutes idle.
